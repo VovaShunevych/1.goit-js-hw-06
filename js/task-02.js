@@ -6,13 +6,15 @@ const ingredients = [
   'Herbs',
   'Condiments',
 ];
-const ingredientsBlock = document.querySelector('#ingredients');
+const list = document.querySelector('#ingredients')
+const liArray = []
 
-const itemList = ingredients.map(ingredient => {
-  const item = document.createElement('li');
-  item.textContent = ingredient;
-  return item;
-});
+ingredients.forEach(ingredient => {
+	const item = document.createElement('li')
+	item.className = 'item'
+	item.textContent = ingredient
+	liArray.push(item)
+})
 
-ingredientsBlock.append(...itemList);
+list.append(...liArray)
 
